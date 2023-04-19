@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:playstore_app/screen/view/home.dart';
-import 'package:playstore_app/screen/view/second.dart';
+import 'package:play_store/screen/view/home_screen.dart';
+import 'package:play_store/screen/view/second_screen.dart';
 
-
-class TabbarView extends StatefulWidget {
-  const TabbarView({Key? key}) : super(key: key);
+class fourthscreen extends StatefulWidget {
+  const fourthscreen({Key? key}) : super(key: key);
 
   @override
-  State<TabbarView> createState() => _TabbarViewState();
+  State<fourthscreen> createState() => _fourthscreenState();
 }
 
-class _TabbarViewState extends State<TabbarView> {
+class _fourthscreenState extends State<fourthscreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -21,7 +20,7 @@ class _TabbarViewState extends State<TabbarView> {
           appBar: AppBar(
             backgroundColor: Colors.white,
             leading: Icon(Icons.menu,color: Colors.black,),
-            title: Text("Games Music & Network app",style: TextStyle(color: Colors.black),),
+            title: Text("Playstore App",style: TextStyle(color: Colors.black),),
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(25),
               child: TabBar(
@@ -36,8 +35,8 @@ class _TabbarViewState extends State<TabbarView> {
           ),
           body: TabBarView(
             children: [
-              HomeScreen(),
-              SecondScreen(),
+              homescreen(),
+              secondscreen(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(

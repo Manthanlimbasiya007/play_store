@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:playstore_app/screen/provider/home_provider.dart';
-import 'package:playstore_app/screen/view/home.dart';
-import 'package:playstore_app/screen/view/second.dart';
-import 'package:playstore_app/screen/view/tabbar.dart';
-import 'package:playstore_app/screen/view/third.dart';
+import 'package:play_store/screen/provider/playstore_provider.dart';
+import 'package:play_store/screen/view/fourth_screen.dart';
+import 'package:play_store/screen/view/home_screen.dart';
+import 'package:play_store/screen/view/second_screen.dart';
+import 'package:play_store/screen/view/third_screen.dart';
 import 'package:provider/provider.dart';
 
 void main()
@@ -11,16 +11,16 @@ void main()
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => homeProvider(),),
+        ChangeNotifierProvider(create: (context) => HomeProvider(),),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // initialRoute: 'detail',
         routes: {
-          '/':(context) => TabbarView(),
-          'top':(context) => SecondScreen(),
-          'detail':(context) => ThirdScreen(),
-          'for':(context) => HomeScreen(),
+          '/':(context) => fourthscreen(),
+          'top':(context) => secondscreen(),
+          'detail':(context) => thirdscreen(),
+          'for':(context) => homescreen(),
         },
       ),
     ),

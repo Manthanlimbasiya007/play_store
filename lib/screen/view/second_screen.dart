@@ -2,22 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/home_provider.dart';
+import '../provider/playstore_provider.dart';
 
-class SecondScreen extends StatefulWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+class secondscreen extends StatefulWidget {
+  const secondscreen({Key? key}) : super(key: key);
 
   @override
-  State<SecondScreen> createState() => SecondScreenState();
+  State<secondscreen> createState() => secondscreenState();
 }
 
-class SecondScreenState extends State<SecondScreen> {
-  PlayStoreProvider? playStoreProviderT;
-  PlayStoreProvider? playStoreProviderF;
+class secondscreenState extends State<secondscreen> {
+  HomeProvider? homeProviderTrue;
+  HomeProvider? homeProviderFalse;
   @override
   Widget build(BuildContext context) {
-    playStoreProviderT = Provider.of<PlayStoreProvider>(context,listen: true);
-    playStoreProviderF = Provider.of<PlayStoreProvider>(context,listen: false);
+    homeProviderTrue = Provider.of<HomeProvider>(context,listen: true);
+    homeProviderFalse = Provider.of<HomeProvider>(context,listen: false);
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -31,13 +31,13 @@ class SecondScreenState extends State<SecondScreen> {
                   child: ListTile(
                     leading: Container(
                       height: 70,width: 55,decoration: BoxDecoration(borderRadius: BorderRadius.circular(3),),
-                      child: Image.asset("${playStoreProviderT!.image[index]}",fit: BoxFit.cover,),
+                      child: Image.asset("${homeProviderTrue!.image[index]}",fit: BoxFit.cover,),
                     ),
-                    title: Text("${playStoreProviderF!.name[index]}"),
-                    subtitle: Text("${playStoreProviderF!.subtitle[index]}"),
+                    title: Text("${homeProviderFalse!.name[index]}"),
+                    subtitle: Text("${homeProviderFalse!.subtitle[index]}"),
                   ),
                 );
-              },itemCount: playStoreProviderT!.image.length,),
+              },itemCount: homeProviderTrue!.image.length,),
             ),
           ],
         ),

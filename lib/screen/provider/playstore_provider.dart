@@ -2,41 +2,41 @@ import 'package:flutter/cupertino.dart';
 
 class HomeProvider extends ChangeNotifier {
   List image = [
-    "assets/images/1.jpg",
-    "assets/images/12.jpg",
-    "assets/images/3.jpg",
-    "assets/images/11.jpg",
-    "assets/images/5.jpg",
-    "assets/images/6.jpg",
-    "assets/images/7.jpg",
-    "assets/images/8.jpg",
-    "assets/images/9.jpg",
-    "assets/images/10.jpg",
+    "assets/images/free fire.jpg",
+    "assets/images/minecraft.jpg",
+    "assets/images/pubg.jpg",
+    "assets/images/instagram.jpg",
+    "assets/images/whatshap.jpg",
+    "assets/images/snapchat.jpg",
+    "assets/images/gaana.jpg",
+    "assets/images/spotify.jpg",
+    "assets/images/resso.jpg",
+    "assets/images/bookmyshow.jpg",
   ];
 
   List subtitle = [
     "Gaming-Fun",
-    "Music-Audio",
-    "Gaming-Fun",
-    "Music-Audio",
     "Entertainment-Gaming",
     "Gaming-Fun",
     "Social-Networking",
+    "Communication-Videochatg",
     "Communication-Social-Networking",
-    "Communication-Videochat",
-    "Music-Audio",
+    "Music_Audio",
+    "Music_Audio",
+    "Music_Audio",
+    "Movie App",
   ];
 
   List name = [
-    "Ludo King",
-    "Gaana",
-    "Hill Climb Racing",
-    "Resso",
-    "Mini Militia",
-    "Candy Crush",
+    "Free Fire",
+    "MineCraft",
+    "Pubg",
     "Instagram",
-    "SnapChat",
     "Whatshap",
+    "Snapchat",
+    "Gaana",
     "Spotify",
+    "Resso",
+    "Book My Show",
   ];
 }

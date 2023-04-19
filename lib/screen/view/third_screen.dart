@@ -2,23 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/home_provider.dart';
+import '../provider/playstore_provider.dart';
 
-class ThirdScreen extends StatefulWidget {
-  const ThirdScreen({Key? key}) : super(key: key);
+class thirdscreen extends StatefulWidget {
+  const thirdscreen({Key? key}) : super(key: key);
 
   @override
-  State<ThirdScreen> createState() => _ThirdScreen();
+  State<thirdscreen> createState() => _thirdscreen();
 }
 
-class _ThirdScreen extends State<ThirdScreen> {
-  PlayStoreProvider? playStoreProviderT;
-  PlayStoreProvider? playStoreProviderF;
+class _thirdscreen extends State<thirdscreen> {
+  HomeProvider? homeProviderTrue;
+  HomeProvider? homeProviderFalse;
 
   @override
   Widget build(BuildContext context) {
-    playStoreProviderT = Provider.of<PlayStoreProvider>(context, listen: true);
-    playStoreProviderF = Provider.of<PlayStoreProvider>(context, listen: false);
+    homeProviderTrue = Provider.of<HomeProvider>(context, listen: true);
+    homeProviderFalse = Provider.of<HomeProvider>(context, listen: false);
     int index = ModalRoute.of(context)!.settings.arguments as int;
 
     return SafeArea(
@@ -50,16 +50,16 @@ class _ThirdScreen extends State<ThirdScreen> {
                     height: 60,
                     width: 60,
                     child: Image.asset(
-                      "${playStoreProviderF!.image[index]}",
+                      "${homeProviderFalse!.image[index]}",
                       fit: BoxFit.fill,
                     ),
                   ),
                   title: Text(
-                    "${playStoreProviderF!.name[index]}",
+                    "${homeProviderFalse!.name[index]}",
                     style: TextStyle(fontSize: 17),
                   ),
                   subtitle: Text(
-                    "${playStoreProviderF!.subtitle[index]}",
+                    "${homeProviderFalse!.subtitle[index]}",
                     style: TextStyle(fontSize: 13),
                   ),
                 ),
@@ -170,7 +170,7 @@ class _ThirdScreen extends State<ThirdScreen> {
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.black),
                 child: Image.asset(
-                  "${playStoreProviderF!.image[index]}",
+                  "${homeProviderFalse!.image[index]}",
                   fit: BoxFit.cover,
                 ),
               ),
